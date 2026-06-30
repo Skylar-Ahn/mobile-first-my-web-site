@@ -108,3 +108,20 @@ document.querySelectorAll(".accordion-trigger").forEach((trigger) => {
     }
   });
 });
+
+document.querySelectorAll(".more-project-toggle").forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    const controls = trigger.getAttribute("aria-controls");
+    const panel = controls ? document.getElementById(controls) : null;
+    if (!panel) return;
+
+    const nextExpanded = trigger.getAttribute("aria-expanded") !== "true";
+    trigger.setAttribute("aria-expanded", String(nextExpanded));
+    trigger.textContent = nextExpanded ? "hide project" : "more project";
+    panel.hidden = !nextExpanded;
+
+    if (nextExpanded) {
+      panel.scrollIntoView({ behavior: motionQuery.matches ? "auto" : "smooth", block: "nearest" });
+    }
+  });
+});

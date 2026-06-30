@@ -4,6 +4,7 @@ const path = require("path");
 const root = process.cwd();
 const requiredFiles = [
   "index.html",
+  "relevant-learning.html",
   "styles.css",
   "scripts.js",
   "assets/chrome-qa-dashboard.png",
@@ -13,6 +14,9 @@ const requiredSnippets = [
   ["index.html", "AI Dataset Quality"],
   ["index.html", "Dataset Quality Management Toolkit"],
   ["index.html", "Human-in-the-Loop Pre-labeling Pipeline"],
+  ["index.html", "more project"],
+  ["index.html", "Relevant Learning"],
+  ["relevant-learning.html", "Relevant Learning"],
   ["index.html", "aria-expanded"],
   ["styles.css", "@media (prefers-reduced-motion: reduce)"],
   ["scripts.js", "IntersectionObserver"],

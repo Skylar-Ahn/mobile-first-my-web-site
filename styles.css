@@ -327,6 +327,8 @@ h1 {
 .cta-button:focus-visible,
 .contact-link:hover,
 .contact-link:focus-visible,
+.learning-card:hover,
+.learning-card:focus-visible,
 .accordion-trigger:hover,
 .accordion-trigger:focus-visible {
   transform: scale(1.015);
@@ -404,7 +406,8 @@ h1 {
 .qa-panel h3,
 .field-group h3,
 .note-card h3,
-.tool-panel h3 {
+.tool-panel h3,
+.compact-project-card h3 {
   margin: 16px 0 10px;
   font-size: 19px;
   line-height: 1.16;
@@ -480,6 +483,58 @@ h1 {
 
 .accordion {
   margin-top: 14px;
+}
+
+.project-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cyan);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 820;
+  letter-spacing: 0;
+  text-transform: lowercase;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.more-projects-panel {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.compact-project-card {
+  padding: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(103, 232, 249, 0.1), transparent 35%),
+    rgba(15, 23, 42, 0.62);
+}
+
+.compact-project-card p,
+.learning-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
 }
 
 .accordion-trigger {
@@ -632,6 +687,16 @@ h1 {
   box-shadow: none;
 }
 
+.learning-card {
+  display: block;
+  color: inherit;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.learning-card .text-link {
+  margin-top: 10px;
+}
+
 .about-copy {
   margin: 0 0 14px;
 }
@@ -685,7 +750,7 @@ h1 {
 
 @media (min-width: 520px) {
   .cta-row {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .signal-row {
@@ -724,6 +789,10 @@ h1 {
   .project-grid,
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .learning-card {
+    grid-column: 2;
   }
 
   .note-grid {
