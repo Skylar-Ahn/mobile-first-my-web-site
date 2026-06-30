@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Skylar Ahn portfolio for AI dataset quality assurance, robotics dataset QA, annotation validation, and human-in-the-loop labeling workflows."
+    />
+    <title>Skylar Ahn | AI Dataset Quality Portfolio</title>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand-mark" href="#hero" aria-label="Skylar Ahn home">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>Skylar Ahn</span>
+      </a>
+      <nav class="quick-nav" aria-label="Quick links">
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="section-indicator" aria-live="polite" aria-atomic="true">
+      <span id="active-section-label">HERO</span>
+      <span class="indicator-rule" aria-hidden="true"></span>
+    </div>
+
+    <main id="main">
+      <section id="hero" class="hero section-shell" data-section-label="HERO">
+        <div class="hero-visual" aria-hidden="true">
+          <img
+            src="assets/chrome-qa-dashboard.png"
+            alt=""
+            width="1792"
+            height="1024"
+          />
+        </div>
+        <div class="hero-content reveal">
+          <p class="eyebrow">Robotics Dataset QA Portfolio</p>
+          <h1>Skylar Ahn</h1>
+          <p class="hero-title">
+            AI Dataset Quality<br />
+            &amp; Human-in-the-Loop Labeling
+          </p>
+          <p class="hero-copy">
+            I build practical tools and workflows for inspecting, prioritizing,
+            and improving AI training datasets.
+          </p>
+          <div class="cta-row" aria-label="Primary actions">
+            <a class="cta-button cta-primary" href="#projects">View Projects</a>
+            <a class="cta-button" href="/resume.pdf">Resume</a>
+            <a class="cta-button" href="https://github.com/your-username">GitHub</a>
+          </div>
+        </div>
+        <aside class="focus-panel reveal" data-reveal-index="1" aria-label="Portfolio focus">
+          <span class="panel-kicker">Focus</span>
+          <p>
+            Robotics and autonomous-driving-style visual datasets: annotation
+            validation, distribution analysis, review queues, and
+            foundation-model pre-labeling workflows.
+          </p>
+        </aside>
+      </section>
+
+      <section id="projects" class="section-shell" data-section-label="PROJECTS">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Featured Projects</p>
+          <h2>Dataset QA systems, not random spot checks.</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card reveal" data-reveal-index="0">
+            <div class="card-topline">
+              <span class="status-badge status-mvp">MVP</span>
+              <span class="card-index">01</span>
+            </div>
+            <h3>Dataset Quality Management Toolkit</h3>
+            <p>
+              A COCO-format dataset QA toolkit for validating annotations,
+              analyzing dataset distribution, and prioritizing suspicious
+              samples for human review.
+            </p>
+            <ul class="tag-list" aria-label="Project tags">
+              <li>COCO</li>
+              <li>BBox QA</li>
+              <li>Distribution</li>
+              <li>Review Queue</li>
+              <li>Issue Taxonomy</li>
+            </ul>
+            <div class="accordion">
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="dataset-toolkit-detail"
+              >
+                <span>Read more</span>
+                <span class="trigger-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="accordion-panel" id="dataset-toolkit-detail" hidden>
+                <ul class="detail-list">
+                  <li>COCO annotation validation</li>
+                  <li>bbox, category, and reference checks</li>
+                  <li>class and object-size distribution report</li>
+                  <li>review queue design</li>
+                  <li>issue taxonomy for labeling errors</li>
+                </ul>
+                <p class="why-copy">
+                  Instead of manually checking random samples, this toolkit
+                  helps prioritize high-risk samples for human review.
+                </p>
+                <div class="mini-signal" aria-label="Dataset toolkit issue snapshot">
+                  <div class="signal-row">
+                    <span>schema</span><strong class="signal-pass">PASS</strong>
+                  </div>
+                  <div class="signal-row">
+                    <span>bbox</span><strong class="signal-review">REVIEW</strong>
+                  </div>
+                  <div class="signal-row">
+                    <span>category_ref</span><strong class="signal-check">CHECK</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-reveal-index="1">
+            <div class="card-topline">
+              <span class="status-badge status-progress">In Progress</span>
+              <span class="card-index">02</span>
+            </div>
+            <h3>Human-in-the-Loop Pre-labeling Pipeline</h3>
+            <p>
+              A pre-labeling workflow using Grounding DINO, SAM, and CLIP to
+              generate initial labels, filter uncertain predictions, and route
+              high-risk samples to human reviewers.
+            </p>
+            <ul class="tag-list" aria-label="Project tags">
+              <li>Grounding DINO</li>
+              <li>SAM</li>
+              <li>CLIP</li>
+              <li>Confidence</li>
+              <li>Human Review</li>
+            </ul>
+            <div class="accordion">
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="prelabeling-detail"
+              >
+                <span>Read more</span>
+                <span class="trigger-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="accordion-panel" id="prelabeling-detail" hidden>
+                <ul class="detail-list">
+                  <li>prompt and class ontology design</li>
+                  <li>Grounding DINO detection</li>
+                  <li>SAM mask generation</li>
+                  <li>confidence-based review queue</li>
+                  <li>auto-label vs human-corrected label comparison</li>
+                  <li>error taxonomy and guideline update</li>
+                </ul>
+                <p class="why-copy">
+                  This project is intentionally marked In Progress while the
+                  pipeline and evaluation workflow are being built.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="review-queue" class="section-shell" data-section-label="REVIEW QUEUE">
+        <div class="section-heading reveal">
+          <p class="eyebrow">QA Signals</p>
+          <h2>Review queue preview</h2>
+          <p>
+            A compact issue tracker view for deciding which samples need human
+            attention first.
+          </p>
+        </div>
+
+        <article class="qa-panel reveal" aria-labelledby="qa-panel-title">
+          <div class="qa-panel-header">
+            <div>
+              <p class="panel-kicker">Quality Signals</p>
+              <h3 id="qa-panel-title">Dataset health panel</h3>
+            </div>
+            <span class="status-badge status-mvp">Live Model</span>
+          </div>
+
+          <div class="signal-table">
+            <div class="signal-row">
+              <span>schema</span>
+              <strong class="signal-pass">PASS</strong>
+              <small>References and required fields are valid.</small>
+            </div>
+            <div class="signal-row">
+              <span>bbox</span>
+              <strong class="signal-review">REVIEW</strong>
+              <small>Possible out-of-bounds or abnormal aspect ratio.</small>
+            </div>
+            <div class="signal-row">
+              <span>boundary</span>
+              <strong class="signal-review">AMBIGUOUS</strong>
+              <small>Task transition point needs evidence check.</small>
+            </div>
+            <div class="signal-row">
+              <span>leakage</span>
+              <strong class="signal-check">CHECK</strong>
+              <small>Near-duplicate sample may cross splits.</small>
+            </div>
+            <div class="signal-row signal-extra" hidden>
+              <span>low_conf</span>
+              <strong class="signal-review">REVIEW</strong>
+              <small>Route uncertain prediction to human queue.</small>
+            </div>
+            <div class="signal-row signal-extra" hidden>
+              <span>taxonomy</span>
+              <strong class="signal-high">HIGH</strong>
+              <small>Label guideline mismatch affects downstream training.</small>
+            </div>
+            <div class="signal-row signal-extra" hidden>
+              <span>class_tail</span>
+              <strong class="signal-check">CHECK</strong>
+              <small>Long-tail class needs distribution report review.</small>
+            </div>
+          </div>
+
+          <div class="qa-expanded-copy" id="qa-signal-details" hidden>
+            <p>
+              <strong>bbox REVIEW:</strong> likely cause is an invalid box,
+              unusual size, or edge crop. Action: route sample to human review.
+              Priority: medium-high.
+            </p>
+            <p>
+              <strong>boundary AMBIGUOUS:</strong> likely cause is an unclear
+              manipulation transition. Action: compare wrist/front camera,
+              3D motion view, and joint-state signal.
+            </p>
+          </div>
+
+          <button
+            class="accordion-trigger qa-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="qa-signal-details"
+          >
+            <span>Expand signal detail</span>
+            <span class="trigger-icon" aria-hidden="true">+</span>
+          </button>
+        </article>
+      </section>
+
+      <section id="technical-focus" class="section-shell" data-section-label="DATASET TOOLKIT">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Technical Focus</p>
+          <h2>What I work on</h2>
+        </div>
+        <ul class="chip-cloud reveal" data-reveal-index="1" aria-label="Technical focus tags">
+          <li>Dataset QA</li>
+          <li>Annotation Validation</li>
+          <li>BBox / Category Checks</li>
+          <li>Distribution Analysis</li>
+          <li>Review Queue Design</li>
+          <li>Human-in-the-Loop Labeling</li>
+          <li>Foundation Model Pre-labeling</li>
+          <li>Robotics Data Curation</li>
+        </ul>
+      </section>
+
+      <section id="field-experience" class="section-shell" data-section-label="FIELD EXPERIENCE">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Field Experience</p>
+          <h2>Robotics Dataset QA Field Experience</h2>
+          <p>Robotics startup · Part-time field experience</p>
+        </div>
+
+        <div class="field-summary reveal" data-reveal-index="1">
+          <p>
+            Worked on robot-arm teleoperation, task data generation, annotation,
+            and QA for learning-oriented manipulation datasets.
+          </p>
+          <ul class="summary-list">
+            <li>Generated robot manipulation task data through teleoperation</li>
+            <li>Annotated subtask boundaries in manipulation trajectories</li>
+            <li>Reviewed task data for ambiguous transition points</li>
+            <li>Introduced multimodal cross-checking with camera and 3D views</li>
+            <li>Used joint-state graphs as supporting evidence</li>
+            <li>Grouped recurring edge cases with a Frequent Issue Number system</li>
+          </ul>
+        </div>
+
+        <div class="field-groups">
+          <article class="field-group reveal" data-reveal-index="0">
+            <h3>Core Work</h3>
+            <ul>
+              <li>Generated robot manipulation task data through teleoperation.</li>
+              <li>Annotated subtask boundaries in manipulation trajectories.</li>
+              <li>Reviewed task data for labeling quality and ambiguous transition points.</li>
+            </ul>
+          </article>
+
+          <article class="field-group reveal" data-reveal-index="1">
+            <h3>Self-initiated Quality Work</h3>
+            <div class="accordion">
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="quality-work-detail"
+              >
+                <span>View quality work</span>
+                <span class="trigger-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="accordion-panel" id="quality-work-detail" hidden>
+                <ul>
+                  <li>Introduced multimodal cross-checking using wrist-camera footage, front-camera footage, and 3D motion views.</li>
+                  <li>Used joint-state signal graphs as supporting evidence for difficult task-boundary decisions.</li>
+                  <li>Shared this evidence-based review approach with incoming labelers.</li>
+                  <li>Documented ambiguous labeling edge cases in Google Sheets and grouped recurring issues with a Frequent Issue Number structure.</li>
+                  <li>Built worker-facing communication resources for ambiguous annotation cases.</li>
+                  <li>Recorded QA issues in teleoperation equipment and labeling tools, then discussed improvement points with team members.</li>
+                  <li>Built a Notion-based knowledge structure integrating task materials, edge cases, tool QA records, and worker references.</li>
+                  <li>Wrote an improvement proposal comparing integrated review-labeling with separated review and labeling stages.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="field-group reveal" data-reveal-index="2">
+            <h3>How This Connects</h3>
+            <ul>
+              <li>Annotation quality depends on evidence, context, and shared criteria, not just individual carefulness.</li>
+              <li>The goal is to move from high-quality annotation review to systems that make label quality consistent, traceable, and scalable.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="notes" class="section-shell" data-section-label="NOTES">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Technical Notes</p>
+          <h2>Short notes from learning and project-building.</h2>
+        </div>
+        <div class="note-grid">
+          <article class="note-card reveal" data-reveal-index="0">
+            <span class="status-badge status-draft">Draft</span>
+            <h3>Understanding COCO Annotation JSON</h3>
+          </article>
+          <article class="note-card reveal" data-reveal-index="1">
+            <span class="status-badge status-draft">Coming Soon</span>
+            <h3>Why Bounding Box Validation Matters</h3>
+          </article>
+          <article class="note-card reveal" data-reveal-index="2">
+            <span class="status-badge status-draft">Coming Soon</span>
+            <h3>Why Auto-labeling Still Needs Human Review</h3>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section-shell" data-section-label="SKILLS">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Skills &amp; Tools</p>
+          <h2>Built around practical dataset work.</h2>
+        </div>
+        <div class="skills-grid">
+          <article class="tool-panel reveal" data-reveal-index="0">
+            <h3>Used / Building With</h3>
+            <ul class="chip-cloud small" aria-label="Used and building with tools">
+              <li>Python</li>
+              <li>Pandas</li>
+              <li>NumPy</li>
+              <li>JSON</li>
+              <li>pathlib</li>
+              <li>Git/GitHub</li>
+              <li>Grounding DINO</li>
+              <li>SAM</li>
+            </ul>
+          </article>
+          <article class="tool-panel reveal" data-reveal-index="1">
+            <h3>Exploring / Planned Integration</h3>
+            <ul class="chip-cloud small" aria-label="Planned integration tools">
+              <li>CVAT</li>
+              <li>Label Studio</li>
+              <li>Docker</li>
+              <li>DVC or Git LFS</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section-shell" data-section-label="ABOUT">
+        <div class="section-heading reveal">
+          <p class="eyebrow">About</p>
+          <h2>Mathematics background. Dataset quality focus.</h2>
+        </div>
+        <p class="about-copy reveal" data-reveal-index="1">
+          Mathematics background. Experience in teaching, data labeling, and
+          robotics teleoperation / annotation QA. Focused on AI training dataset
+          quality management and robotics data curation.
+        </p>
+        <div class="accordion reveal" data-reveal-index="2">
+          <button
+            class="accordion-trigger"
+            type="button"
+            aria-expanded="false"
+            aria-controls="about-detail"
+          >
+            <span>Read full about</span>
+            <span class="trigger-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel" id="about-detail" hidden>
+            <p>
+              I studied mathematics and have experience in teaching, data
+              labeling, and robotics teleoperation / annotation QA. My current
+              focus is AI training dataset quality management, especially for
+              visual datasets used in robotics and autonomous-driving-style
+              tasks.
+            </p>
+            <p>
+              I am interested in building practical systems that connect human
+              labeling judgment, quality standards, and automation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-shell contact-section" data-section-label="CONTACT">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Contact / Links</p>
+          <h2>Resume, GitHub, and contact.</h2>
+        </div>
+        <div class="contact-grid reveal" data-reveal-index="1">
+          <a class="contact-link" href="mailto:your-email@example.com">
+            <span>Email</span>
+            <strong>your-email@example.com</strong>
+          </a>
+          <a class="contact-link" href="https://github.com/your-username">
+            <span>GitHub</span>
+            <strong>github.com/your-username</strong>
+          </a>
+          <a class="contact-link" href="/resume.pdf">
+            <span>Resume</span>
+            <strong>/resume.pdf</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
