@@ -4,6 +4,7 @@ const path = require("path");
 const root = process.cwd();
 const requiredFiles = [
   "index.html",
+  "projects.html",
   "relevant-learning.html",
   "styles.css",
   "scripts.js",
@@ -15,6 +16,7 @@ const requiredSnippets = [
   ["index.html", "Dataset Quality Management Toolkit"],
   ["index.html", "Human-in-the-Loop Pre-labeling Pipeline"],
   ["index.html", "more project"],
+  ["projects.html", "More Projects"],
   ["index.html", "Relevant Learning"],
   ["relevant-learning.html", "Relevant Learning"],
   ["index.html", "aria-expanded"],

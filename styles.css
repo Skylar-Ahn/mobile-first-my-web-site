@@ -216,7 +216,6 @@ a {
   filter: saturate(0.95) contrast(1.08);
 }
 
-.hero-content,
 .focus-panel,
 .project-card,
 .qa-panel,
@@ -485,10 +484,11 @@ h1 {
   margin-top: 14px;
 }
 
-.project-card-footer {
+.project-more-row {
   display: flex;
   justify-content: flex-end;
-  margin-top: 12px;
+  margin-top: 8px;
+  padding: 0 2px;
 }
 
 .text-link {
@@ -507,6 +507,11 @@ h1 {
   text-transform: lowercase;
 }
 
+.more-project-link {
+  min-height: 44px;
+  padding-inline: 2px;
+}
+
 .text-link:hover,
 .text-link:focus-visible {
   color: var(--text);
@@ -514,7 +519,8 @@ h1 {
   text-underline-offset: 4px;
 }
 
-.more-projects-panel {
+.projects-page-grid,
+.learning-detail-grid {
   display: grid;
   gap: 12px;
   margin-top: 14px;
