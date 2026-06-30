@@ -17,11 +17,15 @@ const requiredSnippets = [
   ["index.html", "Human-in-the-Loop Pre-labeling Pipeline"],
   ["index.html", "more project"],
   ["projects.html", "More Projects"],
-  ["index.html", "Relevant Learning"],
+  ["index.html", "Learning map"],
+  ["index.html", "aria-pressed"],
+  ["index.html", "data-i18n"],
   ["relevant-learning.html", "Relevant Learning"],
   ["index.html", "aria-expanded"],
   ["styles.css", "@media (prefers-reduced-motion: reduce)"],
   ["scripts.js", "IntersectionObserver"],
+  ["scripts.js", "skylar-language"],
+  ["scripts.js", "robotics 및 visual AI training dataset"],
 ];
 
 let failed = false;

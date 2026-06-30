@@ -191,10 +191,11 @@ a {
 
 .hero {
   display: grid;
-  align-content: end;
+  align-content: center;
   min-height: 100svh;
-  padding-top: 118px;
-  gap: 18px;
+  padding-top: calc(104px + env(safe-area-inset-top));
+  padding-bottom: calc(108px + env(safe-area-inset-bottom));
+  gap: 0;
 }
 
 .hero-visual {
@@ -217,6 +218,7 @@ a {
 }
 
 .focus-panel,
+.focus-areas-panel,
 .project-card,
 .qa-panel,
 .field-summary,
@@ -235,7 +237,51 @@ a {
 }
 
 .hero-content {
-  padding: 18px;
+  max-width: 38rem;
+  padding: 0;
+}
+
+.hero-eyebrow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.hero-eyebrow-row .eyebrow {
+  margin: 0;
+}
+
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 2px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 999px;
+  background: rgba(2, 6, 23, 0.44);
+  flex: 0 0 auto;
+}
+
+.language-toggle button {
+  min-width: 34px;
+  min-height: 26px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--soft);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 830;
+}
+
+.language-toggle button.is-active {
+  background: rgba(103, 232, 249, 0.16);
+  color: var(--cyan);
+  box-shadow: inset 0 0 0 1px rgba(103, 232, 249, 0.38);
 }
 
 .eyebrow,
@@ -263,9 +309,9 @@ h1 {
 }
 
 .hero-title {
-  margin: 12px 0 0;
+  margin: 0;
   color: var(--text);
-  font-size: clamp(28px, 8.5vw, 44px);
+  font-size: clamp(34px, 10vw, 48px);
   font-weight: 820;
   line-height: 1.02;
   letter-spacing: 0;
@@ -275,6 +321,7 @@ h1 {
 .section-heading p,
 .project-card p,
 .focus-panel p,
+.focus-secondary,
 .field-summary p,
 .about-copy,
 .accordion-panel,
@@ -285,15 +332,15 @@ h1 {
 }
 
 .hero-copy {
-  max-width: 40rem;
-  margin: 16px 0 0;
+  max-width: 26rem;
+  margin: 18px 0 0;
 }
 
 .cta-row {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 22px;
 }
 
 .cta-button,
@@ -326,8 +373,6 @@ h1 {
 .cta-button:focus-visible,
 .contact-link:hover,
 .contact-link:focus-visible,
-.learning-card:hover,
-.learning-card:focus-visible,
 .accordion-trigger:hover,
 .accordion-trigger:focus-visible {
   transform: scale(1.015);
@@ -342,12 +387,50 @@ h1 {
   opacity: 0.82;
 }
 
-.focus-panel {
+.focus-panel,
+.focus-areas-panel {
   padding: 14px;
 }
 
-.focus-panel p {
+.focus-panel p,
+.focus-secondary {
   margin: 0;
+}
+
+.focus-section {
+  padding-top: 0;
+  padding-bottom: 18px;
+}
+
+.focus-areas-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.focus-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.focus-chip-row li {
+  min-height: 32px;
+  padding: 8px 11px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.56);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 760;
+}
+
+.focus-secondary {
+  color: var(--soft);
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .section-heading {
@@ -693,18 +776,43 @@ h1 {
   box-shadow: none;
 }
 
-.learning-card {
-  display: block;
-  color: inherit;
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+.learning-map-link {
+  margin-top: 14px;
+  padding: 2px 2px 0;
+  color: var(--soft);
 }
 
-.learning-card .text-link {
-  margin-top: 10px;
+.learning-map-link span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 820;
+}
+
+.learning-map-link p {
+  margin: 4px 0 2px;
+  color: var(--soft);
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .about-copy {
-  margin: 0 0 14px;
+  margin: 0 0 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.about-background {
+  margin-top: 6px;
+}
+
+.about-more-trigger {
+  min-height: 32px;
+  text-transform: none;
 }
 
 .contact-section {
@@ -784,21 +892,12 @@ h1 {
   }
 
   .hero {
-    grid-template-columns: 1.25fr 0.75fr;
-    align-items: end;
-  }
-
-  .focus-panel {
-    align-self: end;
+    align-content: center;
   }
 
   .project-grid,
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .learning-card {
-    grid-column: 2;
   }
 
   .note-grid {
