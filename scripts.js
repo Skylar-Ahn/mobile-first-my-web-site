@@ -1,18 +1,49 @@
 const sectionLabel = document.querySelector("#active-section-label");
+const sectionIndicator = document.querySelector(".section-indicator");
 const sections = Array.from(document.querySelectorAll("[data-section-label]"));
 const revealItems = Array.from(document.querySelectorAll(".reveal"));
 const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-if (sectionLabel && sections.length) {
+if (sectionLabel && sectionIndicator && sections.length) {
   let sectionTicking = false;
+  let activeSection = sections[0];
+  let lastScrollY = window.scrollY;
+  let hideSectionTimer;
 
-  const updateActiveSection = () => {
+  const hideSectionIndicator = () => {
+    sectionIndicator.classList.remove("is-visible");
+  };
+
+  const showSectionIndicator = () => {
+    window.clearTimeout(hideSectionTimer);
+    sectionIndicator.classList.add("is-visible");
+    hideSectionTimer = window.setTimeout(hideSectionIndicator, 2000);
+  };
+
+  const getActiveSection = () => {
     const readLine = window.scrollY + 150;
-    const active = sections.reduce((current, section) => {
+    return sections.reduce((current, section) => {
       return section.offsetTop <= readLine ? section : current;
     }, sections[0]);
+  };
+
+  const updateActiveSection = () => {
+    const currentScrollY = window.scrollY;
+    const active = getActiveSection();
+    const isScrollingDown = currentScrollY > lastScrollY;
+    const enteredNewSection = active !== activeSection;
 
     sectionLabel.textContent = active.dataset.sectionLabel;
+
+    if (enteredNewSection && isScrollingDown) {
+      showSectionIndicator();
+    } else if (!isScrollingDown) {
+      window.clearTimeout(hideSectionTimer);
+      hideSectionIndicator();
+    }
+
+    activeSection = active;
+    lastScrollY = currentScrollY;
     sectionTicking = false;
   };
 
@@ -22,7 +53,8 @@ if (sectionLabel && sections.length) {
     window.requestAnimationFrame(updateActiveSection);
   };
 
-  updateActiveSection();
+  sectionLabel.textContent = activeSection.dataset.sectionLabel;
+  hideSectionIndicator();
   window.addEventListener("scroll", requestSectionUpdate, { passive: true });
   window.addEventListener("resize", requestSectionUpdate);
 }
